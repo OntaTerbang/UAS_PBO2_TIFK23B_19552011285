@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.kasirpropertijavafxfadillahfajri.KelolaPenyewaController" spacing="10.0" alignment="TOP_CENTER" style="-fx-padding: 10;">
+    <children>
+        <HBox alignment="TOP_LEFT">
+            <Button fx:id="kembaliButton" text="Kembali ke Dasbor" onAction="#goToDasbor" />
+        </HBox>
+        <Label text="Data Diri" style="-fx-font-size: 18px;" />
+        <HBox spacing="10.0">
+            <TextField fx:id="namaField" promptText="Nama" />
+            <TextField fx:id="noHpField" promptText="No HP" />
+        </HBox>
+        <TextArea fx:id="alamatField" promptText="Alamat" prefRowCount="2" />
+        <Button fx:id="simpanButton" text="Simpan" onAction="#handleSimpan" />
+    </children>
+</VBox>

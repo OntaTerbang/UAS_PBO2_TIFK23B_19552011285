@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.kasirpropertijavafxfadillahfajri.KelolaPropertiController" spacing="10.0" alignment="TOP_CENTER" style="-fx-padding: 10;">
+    <children>
+        <HBox alignment="TOP_LEFT">
+            <Button fx:id="kembaliButton" text="Kembali ke Dasbor" onAction="#goToDasbor" />
+        </HBox>
+        <Label text="Kelola Properti" style="-fx-font-size: 18px;" />
+        <HBox spacing="10.0">
+            <ComboBox fx:id="jenisCombo" promptText="Jenis" />
+            <TextField fx:id="alamatField" promptText="Alamat" />
+        </HBox>
+        <HBox spacing="10.0">
+            <TextField fx:id="jumlahKamarField" promptText="Jumlah Kamar" />
+            <TextField fx:id="hargaSewaField" promptText="Harga Sewa" />
+            <TextField fx:id="pajakField" promptText="Pajak" editable="false" />
+            <ComboBox fx:id="statusCombo" promptText="Status" />
+        </HBox>
+        <HBox spacing="10.0">
+            <Button fx:id="tambahButton" text="Tambah" onAction="#handleTambah" />
+            <Button fx:id="editButton" text="Edit" onAction="#handleEdit" />
+            <Button fx:id="hapusButton" text="Hapus" onAction="#handleHapus" />
+            <Button fx:id="resetButton" text="Reset" onAction="#handleReset" />
+        </HBox>
+        <TableView fx:id="propertiTable" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" />
+                <TableColumn fx:id="colJenis" text="Jenis" />
+                <TableColumn fx:id="colAlamat" text="Alamat" />
+                <TableColumn fx:id="colJumlahKamar" text="Jumlah Kamar" />
+                <TableColumn fx:id="colHargaSewa" text="Harga Sewa" />
+                <TableColumn fx:id="colPajak" text="Pajak" />
+                <TableColumn fx:id="colStatus" text="Status" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

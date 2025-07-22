@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.kasirpropertijavafxfadillahfajri.KelolaTransaksiController" spacing="10.0" alignment="CENTER" style="-fx-padding: 20;">
+    <children>
+        <HBox alignment="TOP_LEFT">
+            <Button fx:id="kembaliButton" text="Kembali" onAction="#goToDasbor" />
+        </HBox>
+        <Label text="Kelola Transaksi" style="-fx-font-size: 18px;" />
+        <HBox spacing="10.0">
+            <ComboBox fx:id="jenisCombo" promptText="Jenis Properti" />
+        </HBox>
+        <TableView fx:id="propertiTable" prefHeight="120">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" />
+                <TableColumn fx:id="colJenis" text="Jenis" />
+                <TableColumn fx:id="colAlamat" text="Alamat" />
+                <TableColumn fx:id="colJumlahKamar" text="Jumlah Kamar" />
+                <TableColumn fx:id="colHargaSewa" text="Harga Sewa" />
+                <TableColumn fx:id="colPajak" text="Pajak" />
+                <TableColumn fx:id="colStatus" text="Status" />
+            </columns>
+        </TableView>
+       
+        <HBox spacing="10.0">
+             <TextField fx:id="penyewaField" promptText="Penyewa" editable="false" focusTraversable="false"/>
+            <TextField fx:id="lamaTinggalField" promptText="Lama Tinggal (bulan)" />
+            <TextField fx:id="totalField" promptText="Total" editable="false" focusTraversable="false" />
+        </HBox>
+        <HBox spacing="10.0">
+            <Button fx:id="tambahButton" text="Tambah" onAction="#handleTambah" />
+            <Button fx:id="hapusButton" text="Hapus" onAction="#handleHapus" />
+            <Button fx:id="resetButton" text="Reset" onAction="#handleReset" />
+            <Button fx:id="cetakButton" text="Cetak" onAction="#handleCetak" />
+        </HBox>
+        <TableView fx:id="transaksiTable" prefHeight="120">
+            <columns>
+                <TableColumn fx:id="colTransId" text="ID" />
+                <TableColumn fx:id="colTransProperti" text="Properti" />
+                <TableColumn fx:id="colTransAlamat" text="Alamat" />
+                <TableColumn fx:id="colTransPenyewa" text="Penyewa" prefWidth="80" />
+                <TableColumn fx:id="colTransTanggal" text="Tanggal" />
+                <TableColumn fx:id="colTransLama" text="Lama" />
+                <TableColumn fx:id="colTransTotal" text="Total" prefWidth="120" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
