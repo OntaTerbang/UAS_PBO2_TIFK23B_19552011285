@@ -12,6 +12,8 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.text.NumberFormat;
+import java.util.Locale;
 /**
  *
  * @author Fadil
@@ -62,6 +64,30 @@ public class KelolaPropertiController {
                 pajakField.setText(String.valueOf(harga * 0.005));
             } catch (Exception e) {
                 pajakField.setText("");
+            }
+        });
+        colHargaSewa.setCellFactory(tc -> new TableCell<Properti, Double>() {
+            @Override
+            protected void updateItem(Double value, boolean empty) {
+                super.updateItem(value, empty);
+                if (empty || value == null) {
+                    setText(null);
+                } else {
+                    NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+                    setText(nf.format(value));
+                }
+            }
+        });
+        colPajak.setCellFactory(tc -> new TableCell<Properti, Double>() {
+            @Override
+            protected void updateItem(Double value, boolean empty) {
+                super.updateItem(value, empty);
+                if (empty || value == null) {
+                    setText(null);
+                } else {
+                    NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+                    setText(nf.format(value));
+                }
             }
         });
     }

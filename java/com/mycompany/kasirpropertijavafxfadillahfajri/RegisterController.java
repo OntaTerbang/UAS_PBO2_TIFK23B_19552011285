@@ -35,6 +35,10 @@ public class RegisterController {
             showAlert("Register Gagal", "Semua field wajib diisi!");
             return;
         }
+        if (password.length() < 6) {
+            showAlert("Register Gagal", "Password minimal 6 karakter!");
+            return;
+        }
         if (UserDAO.isUsernameExist(username)) {
             showAlert("Register Gagal", "Username sudah digunakan!");
             return;
